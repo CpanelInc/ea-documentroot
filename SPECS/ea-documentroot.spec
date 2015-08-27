@@ -16,10 +16,11 @@
 Summary:       Package that installs error pages for Apache
 Name:          %{pkg_name}
 Version:       1.0
-Release:       1%{?dist}
+Release:       2%{?dist}
 Group:         System Environment/Daemons
 License:       Apache License 2.0
 Vendor:        cPanel, Inc.
+BuildArch:     noarch
 
 Source0:       400.shtml
 Source1:       401.shtml
@@ -28,6 +29,7 @@ Source3:       404.shtml
 Source4:       413.shtml
 Source5:       500.shtml
 Source6:       cp_errordocument.shtml
+Source7:       index.html
 
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 #Requires:      ea-webserver
@@ -46,6 +48,7 @@ install -m 644 %{SOURCE3} $RPM_BUILD_ROOT%{webdocroot}/
 install -m 644 %{SOURCE4} $RPM_BUILD_ROOT%{webdocroot}/
 install -m 644 %{SOURCE5} $RPM_BUILD_ROOT%{webdocroot}/
 install -m 644 %{SOURCE6} $RPM_BUILD_ROOT%{webdocroot}/
+install -m 644 %{SOURCE7} $RPM_BUILD_ROOT%{webdocroot}/
 
 %clean
 rm -rf %{buildroot}
@@ -55,5 +58,8 @@ rm -rf %{buildroot}
 %config(noreplace) %{webdocroot}/*
 
 %changelog
+* Fri Aug 28 2015 S. Kurt Newman <kurt.newman@cpanel.net> 1.0-2
+- Added missing index.html that displays cpanel default web page
+
 * Mon May 18 2015 Joe Zhou <joe.zhou@cpanel.net> 1.0-1
 - Set up the files
