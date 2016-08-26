@@ -17,7 +17,7 @@ Summary:       Package that installs error pages for Apache
 Name:          %{pkg_name}
 Version:       1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4550 for more details
-%define release_prefix 3
+%define release_prefix 4
 Release: %{release_prefix}%{?dist}.cpanel
 Group:         System Environment/Daemons
 License:       Apache License 2.0
@@ -60,6 +60,9 @@ rm -rf %{buildroot}
 %config(noreplace) %{webdocroot}/*
 
 %changelog
+* Fri Aug 26 2016 Jacob Perkins <jacob.perkins@cpanel.net> - 1.0-4
+- Update footer logo to SVG
+
 * Mon Jun 20 2016 Dan Muey <dan@cpanel.net> - 1.0-3
 - EA-4383: Update Release value to OBS-proof versioning
 
