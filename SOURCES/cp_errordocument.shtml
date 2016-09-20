@@ -198,8 +198,8 @@
         <footer>
             <div class="container">
                 <a href="http://cpanel.com/?utm_source=cpanelwhm&utm_medium=cplogo&utm_content=logolink&utm_campaign=<!--#echo var='code' -->referral" target="cpanel" title="cPanel, Inc.">
-                    <img src="/img-sys/powered_by_cpanel.png" alt="cPanel, Inc." />
-                    <div class="copyright">Copyright © 2015 cPanel, Inc.</div>
+                    <img src="/img-sys/powered_by_cpanel.svg" height="20" alt="cPanel, Inc." />
+                    <div class="copyright">Copyright © 2016 cPanel, Inc.</div>
                 </a>
             </div>
         </footer>
