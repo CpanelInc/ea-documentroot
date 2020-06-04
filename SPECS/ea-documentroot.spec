@@ -17,7 +17,7 @@ Summary:       Package that installs error pages for Apache
 Name:          %{pkg_name}
 Version:       1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4550 for more details
-%define release_prefix 5
+%define release_prefix 6
 Release: %{release_prefix}%{?dist}.cpanel
 Group:         System Environment/Daemons
 License:       Apache License 2.0
@@ -60,6 +60,9 @@ rm -rf %{buildroot}
 %config(noreplace) %{webdocroot}/*
 
 %changelog
+* Tue Jun 02 2020 Tim Mullin <tim@cpanel.net> - 1.0-6
+- EA-9095: Fixed grammatical error in 404 page
+
 * Fri Jul 20 2018 Tim Mullin <tim@cpanel.net> - 1.0-5
 - Updated index.html to set Cache-control to no-cache
 
