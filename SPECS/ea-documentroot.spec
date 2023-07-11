@@ -10,14 +10,11 @@
 %global ns_name  ea
 %global pkg_name %{ns_name}-documentroot
 
-# do not produce empty debuginfo package
-%global debug_package %{nil}
-
 Summary:       Package that installs error pages for Apache
 Name:          %{pkg_name}
 Version:       1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4550 for more details
-%define release_prefix 6
+%define release_prefix 7
 Release: %{release_prefix}%{?dist}.cpanel
 Group:         System Environment/Daemons
 License:       Apache License 2.0
@@ -60,6 +57,9 @@ rm -rf %{buildroot}
 %config(noreplace) %{webdocroot}/*
 
 %changelog
+* Mon May 08 2023 Julian Brown <julian.brown@cpanel.net> - 1.0-7
+- ZC-10936: Clean up Makefile and remove debug-package-nil
+
 * Tue Jun 02 2020 Tim Mullin <tim@cpanel.net> - 1.0-6
 - EA-9095: Fixed grammatical error in 404 page
 
