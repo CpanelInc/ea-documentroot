@@ -14,7 +14,7 @@ Summary:       Package that installs error pages for Apache
 Name:          %{pkg_name}
 Version:       1.0
 # Doing release_prefix this way for Release allows for OBS-proof versioning, See EA-4550 for more details
-%define release_prefix 7
+%define release_prefix 8
 Release: %{release_prefix}%{?dist}.cpanel
 Group:         System Environment/Daemons
 License:       Apache License 2.0
@@ -57,6 +57,9 @@ rm -rf %{buildroot}
 %config(noreplace) %{webdocroot}/*
 
 %changelog
+* Tue Dec 16 2025 Chris Castillo <chris.castillo@webpros.com> - 1.0-8
+- CPANEL-47168: Sanitize webmaster error email
+
 * Mon May 08 2023 Julian Brown <julian.brown@cpanel.net> - 1.0-7
 - ZC-10936: Clean up Makefile and remove debug-package-nil
 
