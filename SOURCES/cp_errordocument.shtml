@@ -175,7 +175,8 @@
             </section>
 
             <section class="contact-info">
-                Please forward this error screen to <!--#echo var="SERVER_NAME" -->'s <a href="mailto:<!--#echo var="SERVER_ADMIN" -->?subject=Error message [<!--#echo var="REDIRECT_STATUS" -->] <!--#echo var="title" --> for <!--#echo var="HTTP_HOST" --><!--#echo var="REQUEST_URI" --> port <!--#echo var="SERVER_PORT" --> on <!--#echo var="DATE_LOCAL"-->"> WebMaster</a>.
+                <!--#set var="clean_uri" value="${REQUEST_URI/([^?]*).*/$1/}" -->
+                Please forward this error screen to <!--#echo var="SERVER_NAME" -->'s <a href="mailto:<!--#echo var="SERVER_ADMIN" -->?subject=Error message [<!--#echo var="REDIRECT_STATUS" -->] <!--#echo var="title" --> for <!--#echo var="REMOTE_ADDR" --> requesting <!--#echo var="HTTP_HOST" --><!--#echo var="clean_uri" --> port <!--#echo var="SERVER_PORT" --> on <!--#echo var="DATE_LOCAL"-->"> WebMaster</a>.
             </section>
 
             <p class="reason-text"><!--#echo var="msg" --></p>
@@ -199,8 +200,9 @@
             <div class="container">
                 <a href="http://cpanel.com/?utm_source=cpanelwhm&utm_medium=cplogo&utm_content=logolink&utm_campaign=<!--#echo var='code' -->referral" target="cpanel" title="cPanel, Inc.">
                     <img src="/img-sys/powered_by_cpanel.svg" height="20" alt="cPanel, Inc." />
-                    <div class="copyright">Copyright © 2016 cPanel, Inc.</div>
                 </a>
+                    <div class="copyright"><a href="http://cpanel.com/?utm_source=cpanelwhm&utm_medium=cplogo&utm_content=logolink&utm_campaign=<!--#echo var='code' -->referral" target="cpanel" title="cPanel, Inc.">Copyright © 2025 WebPros International, L.L.C.</a>
+                    <br /><a href="https://go.cpanel.net/privacy" target="_blank">Privacy Policy</a></div>
             </div>
         </footer>
     </body>
